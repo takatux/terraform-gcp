@@ -17,7 +17,7 @@ terraform {
 }
 
 provider "google" {
-  project     = "lunar-geography-261201"
-  region      = "asia-southeast1"
-  zone        = "asia-southeast1-a"
+  project     = var.project_id
+  region      = var.region
+  zone        = var.zone
 }
