@@ -21,6 +21,6 @@ variable "env" {
   default = "stage"
 }
 
-variable "private_cidr_range" {}
+#variable "private_cidr_range" {}
 
-variable "public_cidr_range" {}
+#variable "public_cidr_range" {}
