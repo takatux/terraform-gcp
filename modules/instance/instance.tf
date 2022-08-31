@@ -55,10 +55,12 @@ resource "google_compute_instance" "default" {
     sleep 5
 
     # Docker Compose
-    sudo wget --output-document=/usr/local/bin/docker-compose "https://github.com/docker/compose/releases/download/$(wget --quiet --output-document=- https://api.github.com/repos/docker/compose/releases/latest | grep --perl-regexp --only-matching '"tag_name": "\K.*?(?=")')/run.sh"
-    sudo chmod +x /usr/local/bin/docker-compose
-    sudo wget --output-document=/etc/bash_completion.d/docker-compose "https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose"
-    printf '\nDocker Compose installed successfully\n\n'
+    sudo apt install -y docker-compose
+
+    # Install gitlab-runer
+    curl -L "https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh" | sudo bash
+    sudo apt install -y gitlab-runner
+    sudo usermod --append --groups docker gitlab-runner
     SCRIPT
   }
 
