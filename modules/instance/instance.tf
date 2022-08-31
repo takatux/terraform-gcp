@@ -41,11 +41,12 @@ resource "google_compute_instance" "default" {
     # Docker
     sudo apt remove --yes docker docker-engine docker.io containerd runc || true
     sudo apt update
-    sudo apt --yes --no-install-recommends install apt-transport-https ca-certificates
-    wget --quiet --output-document=- https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-    sudo add-apt-repository --yes "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/ubuntu $(lsb_release --codename --short) stable"
+    sudo apt-get install --yes ca-certificates curl gnupg lsb-release
+    sudo mkdir -p /etc/apt/keyrings
+    curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     sudo apt update
-    sudo apt --yes --no-install-recommends install docker-ce docker-ce-cli containerd.io
+    sudo apt --yes --no-install-recommends install docker-ce docker-ce-cli containerd.io docker-compose-plugin
     sudo usermod --append --groups docker "$USER"
     sudo systemctl enable docker
     printf '\nDocker installed successfully\n\n'
