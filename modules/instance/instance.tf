@@ -1,5 +1,5 @@
 resource "google_service_account" "default" {
-  account_id   = "service_account_id"
+  account_id   = "${format("%s","${var.instance_name}-sa")}"
   display_name = "Service Account"
 }
 
