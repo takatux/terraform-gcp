@@ -1,6 +1,6 @@
 module "instance" {
   source          = "../modules/instance"
   instance_name   = "fita-instance"
-  image           = "debian-10-buster-v20220822"
+  image           = "ubuntu-2004-focal-v20220823"
   tags            = var.tags
 }

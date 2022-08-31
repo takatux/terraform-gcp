@@ -5,7 +5,7 @@ variable "zone" {
 }
 
 variable "machine_type" {
-  default = "e2-micro"
+  default = "e2-highcpu-2"
 }
 
 variable "tags" {
