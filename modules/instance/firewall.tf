@@ -1,6 +1,6 @@
 resource "google_compute_firewall" "default-web-firewall" {
   name    = "default-web-firewall"
-  network = google_compute_network.default.name
+  network = var.network
 
   allow {
     protocol = "icmp"

@@ -17,3 +17,7 @@ variable "image" {}
 variable "subnetwork" {
     default = "fita-stage-public-asia-southeast1"
 }
+
+variable "network" {
+    default = "fita-stage-vpc"
+}
