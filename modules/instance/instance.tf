@@ -30,7 +30,7 @@ resource "google_compute_instance" "default" {
   }
 
   metadata = {
-    startup-script = << SCRIPT
+    startup-script = <<SCRIPT
     #!/bin/sh
 
     set -o errexit
