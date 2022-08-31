@@ -24,3 +24,8 @@ variable "env" {
 #variable "private_cidr_range" {}
 
 #variable "public_cidr_range" {}
+
+variable "tags" {
+  type = list(string)
+  default = [ "web", "ssh" ]
+}
