@@ -12,5 +12,6 @@ resource "google_compute_firewall" "default-web-firewall" {
   }
 
   target_tags = var.tags
+  source_ranges = "0.0.0.0/0"
 
 }
