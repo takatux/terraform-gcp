@@ -14,9 +14,9 @@ variable "tags" {
 
 variable "image" {}
 
-variable "subnetwork" {}
+#variable "subnetwork" {}
 
-variable "network" {}
+#variable "network" {}
 
 variable "company" {}
 
