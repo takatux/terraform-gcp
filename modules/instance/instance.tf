@@ -22,7 +22,7 @@ resource "google_compute_instance" "default" {
   #}
 
   network_interface {
-    subnetwork = var.subnetwork
+    subnetwork = "${format("%s","${var.company}-${var.env}-public-${var.region}")}"
 
     access_config {
       // Ephemeral public IP

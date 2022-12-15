@@ -14,10 +14,12 @@ variable "tags" {
 
 variable "image" {}
 
-variable "subnetwork" {
-    default = "fita-stage-public-asia-southeast1"
-}
+variable "subnetwork" {}
 
-variable "network" {
-    default = "fita-stage-vpc"
-}
+variable "network" {}
+
+variable "company" {}
+
+variable "env" {}
+
+variable "region" {}
