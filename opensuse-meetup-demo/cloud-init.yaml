@@ -1,3 +1,0 @@
-echo "Installing nginx ..."
-sudo zypper update
-sudo zypper -y install nginx
