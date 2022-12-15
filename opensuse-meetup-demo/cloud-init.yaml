@@ -1,17 +1,3 @@
-#cloud-config
-
-users:
-- default
-- name: opensuse
-  gecos: opensuse
-  primary_group: hashicorp
-  sudo: ALL=(ALL) NOPASSWD:ALL
-  groups: users, admin
-  ssh_import_id:
-  lock_passwd: false
-  ssh_authorized_keys:
-    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3mKulRElz7xu2ICFOkfMZkxz2Ck8ikbdiysX02Uhs0kFCs3DzcD8eZ9Nuz0D8v4uab0IvhqpLSnmDlFB3JhzgUGrwzQy2m6YrABdc+1xwwt5jLMjakgyoysqi9L3mCjXQOcMXJ9bRgFfEBLbdmeUj/MVcPbPIvy5WoM/Yc2ai/R+qLl0uJtNAbyloFWCC16U+3zPephlKSkfTWe/KDDYALwC2IgdlA4SW1z3fU0X1q1wPYLTWti8GC9EmmOK7KllimxghBgdKbeaWTHUehfygLs+krBPgxKSxuyXIBbJ+H2xfuMywWrMK2t/Bq7f/j+ejAVr//epG/R6fUuRIg527
-
-runcmd:
-- sudo zypper update
-- sudo zypper install nginx
+echo "Installing nginx ..."
+sudo zypper update
+sudo zypper -y install nginx

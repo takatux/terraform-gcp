@@ -30,7 +30,7 @@ resource "google_compute_instance" "default" {
   }
 
   #metadata_startup_script = "echo hi > /test.txt"
-  user_data = data.template_file.user_data.rendered
+  metadata_startup_script = data.template_file.user_data.rendered
 
   service_account {
     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
