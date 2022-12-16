@@ -23,3 +23,5 @@ variable "company" {}
 variable "env" {}
 
 variable "region" {}
+
+variable "metadata_startup_script" {}

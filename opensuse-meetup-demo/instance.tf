@@ -5,5 +5,6 @@ module "instance" {
   tags            = var.tags
   region          = var.region
   env             = var.env
-  company         = var.company        
+  company         = var.company     
+  metadata_startup_script = "sudo zypper -n update && sudo zypper install -y nginx"   
 }

@@ -30,7 +30,7 @@ resource "google_compute_instance" "default" {
   }
 
   #metadata_startup_script = "echo hi > /test.txt"
-  metadata_startup_script = "sudo zypper update && sudo zypper -y install nginx"
+  metadata_startup_script = var.metadata_startup_script
 
   service_account {
     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.

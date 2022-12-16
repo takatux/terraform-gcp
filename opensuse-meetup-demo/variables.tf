@@ -29,3 +29,7 @@ variable "tags" {
   type = list(string)
   default = [ "web", "ssh" ]
 }
+
+variable "metadata_startup_script" {
+  default = "sudo zypper -n update && sudo zypper install -y nginx"
+}
