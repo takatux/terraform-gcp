@@ -6,5 +6,5 @@ module "instance" {
   region          = var.region
   env             = var.env
   company         = var.company     
-  metadata_startup_script = "echo demo && sudo zypper -n update && sudo zypper install -y nginx"   
+  metadata_startup_script = "echo demo && sudo zypper -n update && sudo zypper install -y nginx && sudo systemctl start nginx && sudo systemctl enable nginx && echo '<html> <head> <title>OpenSUSE ID</title> </head> <body> <h1>Welcome</h1> <p>This is a test server for static files.</p> <hr> <small>Powered by nginx and OpenSUSE Linux server</small> </body> </html>' > /srv/www/htdocs/index.html"   
 }
