@@ -6,5 +6,5 @@ module "instance" {
   region          = var.region
   env             = var.env
   company         = var.company     
-  metadata_startup_script = "sudo zypper -n update && sudo zypper install -y nginx"   
+  metadata_startup_script = "echo demo && sudo zypper -n update && sudo zypper install -y nginx"   
 }
