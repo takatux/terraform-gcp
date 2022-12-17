@@ -1,6 +1,6 @@
 module "instance-baru" {
   source          = "../modules/instance"
-  instance_name   = "opensuse-instance-baru-banget"
+  instance_name   = "opensuse-baru"
   image           = "opensuse-leap-15-4-v20221201-x86-64"
   tags            = var.tags
   region          = var.region
